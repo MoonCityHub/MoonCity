@@ -1,0 +1,146 @@
+if game.PlaceId == 286090429 then
+    local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+    local GUI = Mercury:Create{
+        Name = "Mercury",
+        Size = UDim2.fromOffset(600, 400),
+        Theme = Mercury.Themes.Dark,
+        Link = "https://github.com/deeeity/mercury-lib"
+    }
+    
+    local TeleportTab = GUI:Tab{
+        Name = "Teleport",
+        Icon = "rbxassetid://12989660674"
+    }
+    
+    TeleportTab:Button{
+	Name = "Teleport To Quest",
+	Description = nil,
+	Callback = function()
+	    game:GetService("TeleportService"):Teleport(4690140579, game.Players.LocalPlayer)
+	end
+    }
+elseif game.PlaceId == 4690140579 then
+        local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+    local GUI = Mercury:Create{
+        Name = "Mercury",
+        Size = UDim2.fromOffset(600, 400),
+        Theme = Mercury.Themes.Dark,
+        Link = "https://github.com/deeeity/mercury-lib"
+    }
+    
+    local TeleportTab = GUI:Tab{
+        Name = "Teleport",
+        Icon = "rbxassetid://12989660674"
+    }
+    
+    local TeamsTab = GUI:Tab{
+        Name = "Teams",
+        Icon = "rbxassetid://12989660674"
+    }
+    
+    local DevsTab = GUI:Tab{
+        Name = "BecomeDevs",
+        Icon = "rbxassetid://12989660674"
+    }
+    
+    local Misc = GUI:Tab{
+        Name = "Misc",
+        Icon = "rbxassetid://12989660674"
+    }
+    
+    TeleportTab:Button{
+	Name = "Teleport To Quest",
+	Description = nil,
+	Callback = function()
+	    game:GetService("TeleportService"):Teleport(4690140579, game.Players.LocalPlayer)
+	end
+    }
+    
+    DevsTab:Button {
+        Name = "Become Castlers",
+        Description = nil,
+        Callback = function()
+            game.Players.LocalPlayer.Name = "Castlers"
+            game.Players.LocalPlayer.DisplayName = "Castlers"
+            game.Players.LocalPlayer.UserId = "49405424"
+            game.Players.LocalPlayer.QueuePoints.Name = "IsAdmin"
+        end
+    }
+    
+    DevsTab:Button {
+        Name = "Become Mightybaseplate",
+        Description = nil,
+        Callback = function()
+            game.Players.LocalPlayer.Name = "mightybaseplate"
+            game.Players.LocalPlayer.DisplayName = "Opponent"
+            game.Players.LocalPlayer.UserId = "9960695"
+            game.Players.LocalPlayer.QueuePoints.Name = "IsAdmin"
+        end
+    }
+    
+    DevsTab:Button {
+        Name = "Become DevRolve",
+        Description = nil,
+        Callback = function()
+            game.Players.LocalPlayer.Name = "DevRolve"
+            game.Players.LocalPlayer.DisplayName = "DevRolve"
+            game.Players.LocalPlayer.UserId = "23239501"
+            game.Players.LocalPlayer.QueuePoints.Name = "IsAdmin"
+        end
+    }
+    
+    TeamsTab:Button {
+        Name = "All Teams",
+        Description = nil,
+        Callback = function()
+            local Grn = game:GetService("Players").LocalPlayer.PlayerGui.GUI.TeamSelection.Buttons.Grn:Clone()
+Grn.Parent = game.Players.LocalPlayer.PlayerGui.GUI.TeamSelection.Buttons
+Grn.Name = "Greenie"
+Grn.Visible = true
+Grn.MouseButton1Click:Connect(function()
+    print("deez")
+    game.ReplicatedStorage.Events.JoinTeam:FireServer("TGC\0")
+    game.Players.LocalPlayer.TeamColor = BrickColor.new("Bright green")
+    wait("10")
+end)
+
+local Ylw = game:GetService("Players").LocalPlayer.PlayerGui.GUI.TeamSelection.Buttons.Ylw:Clone()
+Ylw.Parent = game.Players.LocalPlayer.PlayerGui.GUI.TeamSelection.Buttons
+Ylw.Name = "Yellowie"
+Ylw.Visible = true
+Ylw.MouseButton1Click:Connect(function()
+    print("deez")
+    game.ReplicatedStorage.Events.JoinTeam:FireServer("TYC\0")
+    game.Players.LocalPlayer.TeamColor = BrickColor.new("Bright yellow")
+    wait("10")
+end)
+
+local Pur = game:GetService("Players").LocalPlayer.PlayerGui.GUI.TeamSelection.Buttons.Pur:Clone()
+Pur.Parent = game.Players.LocalPlayer.PlayerGui.GUI.TeamSelection.Buttons
+Pur.Name = "Yellowie"
+Pur.Visible = true
+Pur.MouseButton1Click:Connect(function()
+    print("deez")
+    game.ReplicatedStorage.Events.JoinTeam:FireServer("TPC\0")
+    game.Players.LocalPlayer.TeamColor = BrickColor.new("Bright violet")
+    wait("10")
+end)
+        end
+    }
+    Misc:Button {
+        Name = "Bring Back GUIS",
+        Description = nil,
+        Callback = function()
+            game.Players.LocalPlayer.PlayerGui.Menew.Main["Stinky's Fix"]:Destroy()
+local Main = game.Players.LocalPlayer.PlayerGui.Menew.Main
+Main.Locker.Visible = true
+Main.Shop.Visible = true
+Main.PlrName.Text = game.Players.LocalPlayer.Name.." - Level: 1000"
+Main.Level.Text = "1000000 xp"
+Main.Settings.Visible = true
+Main.Badges.Visible = true
+Main.Codes.Visible = true
+        end
+    }
+end
+
