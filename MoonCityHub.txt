@@ -142,5 +142,206 @@ Main.Badges.Visible = true
 Main.Codes.Visible = true
         end
     }
-end
+elseif game.PlaceId == 13127800756 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+    local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+    local GUI = Mercury:Create{
+        Name = "Arm Wrestle Simulator",
+        Size = UDim2.fromOffset(600, 400),
+        Theme = Mercury.Themes.Dark,
+        Link = "https://github.com/deeeity/mercury-lib"
+    }
+    local Tab = GUI:Tab{
+        Name = "Main",
+        Icon = "rbxassetid://8569322835"
+    }
+    local MyDropdown = Tab:Dropdown{
+        Name = "Grab Dumbells",
+        StartingText = "Select...",
+        Description = nil,
+        Items = {
+            {"1kg", "1Kg"},
+            {"2kg", "2Kg"},
+            {"3kg", "3Kg"},
+            {"4kg", "4Kg"},
+            {"5kg", "5Kg"},
+            {"10kg", "10Kg"},
+            {"15kg", "15Kg"},
+            {"20kg", "20Kg"},
+            {"25kg", "25Kg"},
+            {"50kg", "50Kg"},
+            {"100kg", "100Kg"},
+            {"250kg", "250Kg"}
+        },
+        Callback = function(item) 
+            local args = {
+                [1] = "1",
+                [2] = "Dumbells",
+                [3] = item
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ToolService"):WaitForChild("RE"):WaitForChild("onGuiEquipRequest"):FireServer(unpack(args))
+        end
+    }
+    local MyDropdown = Tab:Dropdown{
+        Name = "Grab Grips",
+        StartingText = "Select...",
+        Description = nil,
+        Items = {
+            {"1kg", "1Kg"},
+            {"2kg", "2Kg"},
+            {"3kg", "3Kg"},
+            {"4kg", "4Kg"},
+            {"5kg", "5Kg"},
+            {"10kg", "10Kg"},
+            {"15kg", "15Kg"},
+            {"20kg", "20Kg"},
+            {"25kg", "25Kg"},
+            {"50kg", "50Kg"},
+            {"100kg", "100Kg"},
+            {"250kg", "250Kg"}
+        },
+        Callback = function(item) 
+            local args = {
+                [1] = "1",
+                [2] = "Grips",
+                [3] = item
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ToolService"):WaitForChild("RE"):WaitForChild("onGuiEquipRequest"):FireServer(unpack(args))
+        end
+    }
+    local MyDropdown = Tab:Dropdown{
+        Name = "Grab Grips",
+        StartingText = "Select...",
+        Description = nil,
+        Items = {
+            {"1kg", "1Kg"},
+            {"2kg", "2Kg"},
+            {"3kg", "3Kg"},
+            {"4kg", "4Kg"},
+            {"5kg", "5Kg"},
+            {"10kg", "10Kg"},
+            {"15kg", "15Kg"},
+            {"20kg", "20Kg"},
+            {"25kg", "25Kg"},
+            {"50kg", "50Kg"},
+            {"100kg", "100Kg"},
+            {"250kg", "250Kg"}
+        },
+        Callback = function(item) 
+            local args = {
+                [1] = "1",
+                [2] = "Grips",
+                [3] = item
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ToolService"):WaitForChild("RE"):WaitForChild("onGuiEquipRequest"):FireServer(unpack(args))
+        end
+    }
+    local MyDropdown = Tab:Dropdown{
+        Name = "Open Egg",
+        StartingText = "Select...",
+        Description = nil,
+        Items = {
+            {"Earth", "Earth"},
+            {"Icy", "Icy"},
+            {"Lava", "Lava"},
+            {"Blackhole", "Blackhole"}
+        },
+        Callback = function(item) 
+            local args = {
+                [1] = item,
+                [2] = {}
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("EggService"):WaitForChild("RF"):WaitForChild("purchaseEgg"):InvokeServer(unpack(args))
+        end
+    }
+    Tab:Toggle{
+        Name = "Autoclick",
+        StartingState = false,
+        Description = nil,
+        Callback = function(state) 
+            while state == true do
+                game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("ArmWrestleService"):WaitForChild("RE"):WaitForChild("onClickRequest"):FireServer()
 
+                wait(0.1)
+            end
+        end
+    }
+    Tab:Toggle{
+        Name = "Autofarm Cardio",
+        StartingState = false,
+        Description = nil,
+        Callback = function(state) 
+            while state == true do
+                if tonumber(game.Players.LocalPlayer.leaderstats.Cardio.Value) < 300 then
+                    local args = {
+                        [1] = 1,
+                        [2] = "Tier1"
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TreadmillService"):WaitForChild("RE"):WaitForChild("onGiveStats"):FireServer(unpack(args))
+
+                elseif tonumber(game.Players.LocalPlayer.leaderstats.Cardio.Value) >= 300 then
+                    local args = {
+                        [1] = 1,
+                        [2] = "Tier2"
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TreadmillService"):WaitForChild("RE"):WaitForChild("onGiveStats"):FireServer(unpack(args))
+
+                elseif tonumber(game.Players.LocalPlayer.leaderstats.Cardio.Value) < 4500 then
+                    local args = {
+                        [1] = 1,
+                        [2] = "Tier2"
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TreadmillService"):WaitForChild("RE"):WaitForChild("onGiveStats"):FireServer(unpack(args))
+
+                elseif tonumber(game.Players.LocalPlayer.leaderstats.Cardio.Value) >= 4500 then
+                    local args = {
+                        [1] = 1,
+                        [2] = "Tier3"
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TreadmillService"):WaitForChild("RE"):WaitForChild("onGiveStats"):FireServer(unpack(args))
+            elseif tonumber(game.Players.LocalPlayer.leaderstats.Cardio.Value) < 17800 then
+                local args = {
+                    [1] = 1,
+                    [2] = "Tier3"
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TreadmillService"):WaitForChild("RE"):WaitForChild("onGiveStats"):FireServer(unpack(args))
+            elseif tonumber(game.Players.LocalPlayer.leaderstats.Cardio.Value) >= 17800 then
+                local args = {
+                    [1] = 1,
+                    [2] = "Tier4"
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TreadmillService"):WaitForChild("RE"):WaitForChild("onGiveStats"):FireServer(unpack(args))
+            elseif tonumber(game.Players.LocalPlayer.leaderstats.Cardio.Value) < 38900 then
+                local args = {
+                    [1] = 1,
+                    [2] = "Tier4"
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TreadmillService"):WaitForChild("RE"):WaitForChild("onGiveStats"):FireServer(unpack(args))
+            elseif tonumber(game.Players.LocalPlayer.leaderstats.Cardio.Value) >= 38900 then
+                local args = {
+                    [1] = 1,
+                    [2] = "Tier5"
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TreadmillService"):WaitForChild("RE"):WaitForChild("onGiveStats"):FireServer(unpack(args))
+            elseif tonumber(game.Players.LocalPlayer.leaderstats.Cardio.Value) < 100000 then
+                local args = {
+                    [1] = 1,
+                    [2] = "Tier5"
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TreadmillService"):WaitForChild("RE"):WaitForChild("onGiveStats"):FireServer(unpack(args))
+            elseif tonumber(game.Players.LocalPlayer.leaderstats.Cardio.Value) >= 100000 then
+                local args = {
+                    [1] = 1,
+                    [2] = "Tier6"
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("TreadmillService"):WaitForChild("RE"):WaitForChild("onGiveStats"):FireServer(unpack(args))
+            end
+            wait(0.1)
+            end
+        end
+    }
+end
